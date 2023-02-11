@@ -1,8 +1,11 @@
-name: Build and Deploy on GKE
+name: Patch update in DEV environment
 
-on:
-  push:
-    branches: [ "DEV" ]
+on: 
+  workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)    
+        required: false
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
